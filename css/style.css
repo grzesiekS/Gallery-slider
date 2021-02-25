@@ -1,0 +1,40 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.gallery {
+  white-space: nowrap;
+  overflow-x: hidden;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.image {
+  display: inline-block;
+  position: absolute;
+}
+
+.image.active {
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.image.left {
+  left: -30%;
+}
+
+.image.right {
+  right: -30%;
+}
+
+.image img {
+  width: 850px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.buttons {
+  margin-top: 270px;
+  text-align: center;
+}
