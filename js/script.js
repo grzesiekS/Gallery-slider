@@ -21,10 +21,18 @@
 
     if(index > 0) {
       getActiveImage.classList.remove('active');
+      getActiveImage.classList.add('slideRightReverse')
       getActiveImage.classList.add('right')
 
-      getImages[index-1].classList.remove('left')
-      getImages[index-1].classList.add('active')
+      getImages[index-1].classList.add('slideLeftReverse')
+
+      window.setTimeout(() => {
+        getImages[index-1].classList.remove('left')
+        getImages[index-1].classList.add('active')
+
+        getActiveImage.classList.remove('slideRightReverse')
+        getImages[index-1].classList.remove('slideLeftReverse')
+      },1000)
     }
   });
 
@@ -40,10 +48,19 @@
 
     if(index < getImages.length - 1) {
       getActiveImage.classList.remove('active');
+      getActiveImage.classList.add('slideLeft')
       getActiveImage.classList.add('left')
 
-      getImages[index+1].classList.remove('right')
-      getImages[index+1].classList.add('active')
+      getImages[index+1].classList.add('slideRight')
+
+      window.setTimeout(() => {
+        getImages[index+1].classList.remove('right')
+        getImages[index+1].classList.add('active')
+
+        getActiveImage.classList.remove('slideLeft')
+        getImages[index+1].classList.remove('slideRight')
+      },1000)
+      
     }
   });
   

@@ -27,11 +27,11 @@ body {
 }
 
 .image.left {
-  left: -500px;
+  left: -35vw;
 }
 
 .image.right {
-  right: -500px;
+  left: 90vw;
 }
 
 .image img {
@@ -43,4 +43,40 @@ body {
 .buttons {
   margin-top: 270px;
   text-align: center;
+}
+
+.slideLeft {
+  animation: slideLeft 1s;
+}
+
+.slideLeftReverse {
+  animation: slideLeft 1s;
+  animation-direction: reverse;
+}
+
+.slideRight {
+  animation: slideRight 1s;
+}
+
+.slideRightReverse {
+  animation: slideRight 1s;
+  animation-direction: reverse;
+}
+
+@keyframes slideLeft {
+  0% { 
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 100;
+  }
+  100% { left: -35vw; }
+}
+
+@keyframes slideRight {
+  0% { left: 90vw; }
+  100% { 
+    left: 50%;
+    transform: translate(-50%);
+  }
+  
 }
