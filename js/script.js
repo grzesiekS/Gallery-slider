@@ -54,9 +54,9 @@
       getImages[index+1].classList.add('slideRight')
 
       window.setTimeout(() => {
-        getImages[index+1].classList.remove('right')
         getImages[index+1].classList.add('active')
-
+        getImages[index+1].classList.remove('right')
+        
         getActiveImage.classList.remove('slideLeft')
         getImages[index+1].classList.remove('slideRight')
       },1000)
