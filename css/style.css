@@ -14,6 +14,14 @@ body {
   margin: 0 auto;
 }
 
+.gallery > .right {
+  z-index: 100;
+}
+
+.gallery > .right ~ .right {
+  z-index: 0;
+}
+
 .image {
   display: inline-block;
   position: absolute;
