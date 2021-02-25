@@ -3,9 +3,13 @@
   box-sizing: border-box;
 }
 
-.gallery {
-  white-space: nowrap;
+body {
   overflow-x: hidden;
+}
+
+.gallery {
+  width: 100%;
+  white-space: nowrap;
   width: 80%;
   margin: 0 auto;
 }
@@ -13,19 +17,21 @@
 .image {
   display: inline-block;
   position: absolute;
+  top: 0;
 }
 
 .image.active {
   left: 50%;
   transform: translate(-50%);
+  z-index: 100;
 }
 
 .image.left {
-  left: -30%;
+  left: -500px;
 }
 
 .image.right {
-  right: -30%;
+  right: -500px;
 }
 
 .image img {
