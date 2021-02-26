@@ -72,6 +72,24 @@ body {
   animation-direction: reverse;
 }
 
+.slideOffLeft {
+  animation: slideOffLeft 1s;
+}
+
+.slideOffRight {
+  animation: slideOffRight 1s;
+}
+
+.slideOffLeftReverse {
+  animation: slideOffLeft 1s;
+  animation-direction: reverse;
+}
+
+.slideOffRightReverse {
+  animation: slideOffRight 1s;
+  animation-direction: reverse;
+}
+
 @keyframes slideLeft {
   0% { 
     left: 50%;
@@ -88,4 +106,20 @@ body {
     transform: translate(-50%);
   }
   
+}
+
+@keyframes slideOffLeft {
+  0% {
+    left: -30vw;
+  }
+
+  100% {
+    left: -80vw;
+  }
+}
+
+@keyframes slideOffRight {
+  0% { left: 140vw; }
+
+  100% { left: 90vw; }
 }

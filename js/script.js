@@ -21,17 +21,17 @@
 
     if(index > 0) {
       getActiveImage.classList.remove('active');
-      getActiveImage.classList.add('slideRightReverse')
-      getActiveImage.classList.add('right')
+      getActiveImage.classList.add('slideRightReverse');
+      getActiveImage.classList.add('right');
 
-      getImages[index-1].classList.add('slideLeftReverse')
+      getImages[index-1].classList.add('slideLeftReverse');
 
       window.setTimeout(() => {
-        getImages[index-1].classList.remove('left')
-        getImages[index-1].classList.add('active')
+        getImages[index-1].classList.remove('left');
+        getImages[index-1].classList.add('active');
 
-        getActiveImage.classList.remove('slideRightReverse')
-        getImages[index-1].classList.remove('slideLeftReverse')
+        getActiveImage.classList.remove('slideRightReverse');
+        getImages[index-1].classList.remove('slideLeftReverse');
       },1000)
     }
   });
@@ -40,6 +40,7 @@
     event.preventDefault();
 
     const getActiveImage = document.querySelector('.image.active');
+
     let index = 0;
     
     for(let i = 0; i < getImages.length; i++) {
@@ -47,18 +48,39 @@
     }
 
     if(index < getImages.length - 1) {
-      getActiveImage.classList.remove('active');
-      getActiveImage.classList.add('slideLeft')
-      getActiveImage.classList.add('left')
+      getImages[index+1].classList.remove('right');
 
-      getImages[index+1].classList.add('slideRight')
+      const getLeftImages = document.querySelectorAll('.image.left');
+      const getRightImages = document.querySelectorAll('.image.right');
+
+      getActiveImage.classList.remove('active');
+      getActiveImage.classList.add('slideLeft');
+
+      for(let left of getLeftImages) {
+        left.classList.add('slideOffLeft');
+      }
+
+      for(let right of getRightImages) {
+        right.classList.add('slideOffRight');
+      }
+
+      getActiveImage.classList.add('left');
+
+      getImages[index+1].classList.add('slideRight');
 
       window.setTimeout(() => {
-        getImages[index+1].classList.add('active')
-        getImages[index+1].classList.remove('right')
+        getImages[index+1].classList.add('active');
         
-        getActiveImage.classList.remove('slideLeft')
-        getImages[index+1].classList.remove('slideRight')
+        for(let left of getLeftImages) {
+          left.classList.remove('slideOffLeft');
+        }
+
+        for(let right of getRightImages) {
+          right.classList.remove('slideOffRight');
+        }
+
+        getActiveImage.classList.remove('slideLeft');
+        getImages[index+1].classList.remove('slideRight');
       },1000)
       
     }
