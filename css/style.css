@@ -73,20 +73,20 @@ body {
 }
 
 .slideOffLeft {
-  animation: slideOffLeft 1s;
+  animation: slideOffLeft 1s forwards;
 }
 
 .slideOffRight {
-  animation: slideOffRight 1s;
+  animation: slideOffRight 1s forwards;
 }
 
 .slideOffLeftReverse {
-  animation: slideOffLeft 1s;
+  animation: slideOffLeft 1s forwards;
   animation-direction: reverse;
 }
 
 .slideOffRightReverse {
-  animation: slideOffRight 1s;
+  animation: slideOffRight 1s forwards;
   animation-direction: reverse;
 }
 

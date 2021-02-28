@@ -19,7 +19,6 @@
 
       getActiveImage.classList.remove('active');
       getActiveImage.classList.add('slideRightReverse');
-      getActiveImage.classList.add('right');
 
       getImages[index-1].classList.add('slideLeftReverse');
       
@@ -34,7 +33,8 @@
 
       window.setTimeout(() => {
         getImages[index-1].classList.add('active');
-        
+        getActiveImage.classList.add('right');
+
         for(let left of getLeftImages) {
           left.classList.remove('slideOffLeftReverse');
         }
