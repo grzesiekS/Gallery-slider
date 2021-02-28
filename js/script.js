@@ -3,15 +3,7 @@
   const getLeftButton = document.querySelector('.button.left');
   const getRightButton = document.querySelector('.button.right');
 
-  getImages[0].classList.add('active');
-
-  for(let i = 1; i < getImages.length; i++) {
-    getImages[i].classList.add('right');
-  }
-
-  getLeftButton.addEventListener('click', event => {
-    event.preventDefault();
-
+  const handleLeftSlide = () => {
     const getActiveImage = document.querySelector('.image.active');
     let index = 0;
     
@@ -32,13 +24,11 @@
 
         getActiveImage.classList.remove('slideRightReverse');
         getImages[index-1].classList.remove('slideLeftReverse');
-      },1000)
+      },1000);
     }
-  });
+  };
 
-  getRightButton.addEventListener('click', event => {
-    event.preventDefault();
-
+  const handleRightSlide = () => {
     const getActiveImage = document.querySelector('.image.active');
 
     let index = 0;
@@ -84,6 +74,26 @@
       },1000)
       
     }
+  };
+
+  getImages[0].classList.add('active');
+
+  for(let i = 1; i < getImages.length; i++) {
+    getImages[i].classList.add('right');
+  }
+
+  getLeftButton.addEventListener('click', event => {
+    event.preventDefault();
+
+    handleLeftSlide();
+
+  });
+
+  getRightButton.addEventListener('click', event => {
+    event.preventDefault();
+    
+    handleRightSlide();
+    
   });
   
 }
