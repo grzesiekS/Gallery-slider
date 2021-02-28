@@ -12,19 +12,41 @@
     }
 
     if(index > 0) {
+      getImages[index-1].classList.remove('left');
+
+      const getLeftImages = document.querySelectorAll('.image.left');
+      const getRightImages = document.querySelectorAll('.image.right');
+
       getActiveImage.classList.remove('active');
       getActiveImage.classList.add('slideRightReverse');
       getActiveImage.classList.add('right');
 
       getImages[index-1].classList.add('slideLeftReverse');
+      
+
+      for(let left of getLeftImages) {
+        left.classList.add('slideOffLeftReverse');
+      }
+
+      for(let right of getRightImages) {
+        right.classList.add('slideOffRightReverse');
+      }
 
       window.setTimeout(() => {
-        getImages[index-1].classList.remove('left');
         getImages[index-1].classList.add('active');
+        
+        for(let left of getLeftImages) {
+          left.classList.remove('slideOffLeftReverse');
+        }
+
+        for(let right of getRightImages) {
+          right.classList.remove('slideOffRightReverse');
+        }
 
         getActiveImage.classList.remove('slideRightReverse');
         getImages[index-1].classList.remove('slideLeftReverse');
       },1000);
+
     }
   };
 

@@ -55,20 +55,20 @@ body {
 }
 
 .slideLeft {
-  animation: slideLeft 1s;
+  animation: slideLeft 1s forwards;
 }
 
 .slideLeftReverse {
-  animation: slideLeft 1s;
+  animation: slideLeft 1s forwards;
   animation-direction: reverse;
 }
 
 .slideRight {
-  animation: slideRight 1s;
+  animation: slideRight 1s forwards;
 }
 
 .slideRightReverse {
-  animation: slideRight 1s;
+  animation: slideRight 1s forwards;
   animation-direction: reverse;
 }
 
